@@ -1,0 +1,9 @@
+$grey: #333;
+
+div.request_row {
+  padding: 5px 0;
+}
+
+div.request_row + div.request_row {
+  border-top: 1px solid $grey;
+}

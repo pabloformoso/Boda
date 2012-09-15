@@ -13,12 +13,10 @@ group :assets do
   gem 'zurb-foundation'
 end
 
-gem 'devise'
+gem 'devise', '~> 2.1.2'
 
 gem "rmagick"
 gem "carrierwave"
-
 gem 'jquery-rails'
-
 gem 'capistrano'
-gem 'ruby-debug'
+

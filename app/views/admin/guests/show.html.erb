@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_guest.name %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @admin_guest.lastname %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @admin_guest.city %>
+</p>
+
+<p>
+  <b>Has confirmed:</b>
+  <%= @admin_guest.has_confirmed %>
+</p>
+
+<p>
+  <b>Number of companions:</b>
+  <%= @admin_guest.number_of_companions %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_guest_path(@admin_guest) %> |
+<%= link_to 'Back', admin_guests_path %>

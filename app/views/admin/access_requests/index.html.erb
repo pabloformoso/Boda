@@ -1,0 +1,27 @@
+<h1>Listing admin_access_requests</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Revised</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_access_requests.each do |admin_access_request| %>
+  <tr>
+    <td><%= admin_access_request.name %></td>
+    <td><%= admin_access_request.email %></td>
+    <td><%= admin_access_request.revised %></td>
+    <td><%= link_to 'Show', admin_access_request %></td>
+    <td><%= link_to 'Edit', edit_admin_access_request_path(admin_access_request) %></td>
+    <td><%= link_to 'Destroy', admin_access_request, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Access request', new_admin_access_request_path %>

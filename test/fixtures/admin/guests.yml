@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  lastname: MyString
+  city: MyString
+  has_confirmed: false
+  number_of_companions: 1
+
+two:
+  name: MyString
+  lastname: MyString
+  city: MyString
+  has_confirmed: false
+  number_of_companions: 1
