@@ -37,7 +37,7 @@ task :production do
   set :user, "pablo"
   set :sudo, "sudo -p f0rm0s0es"
   set :keep_releases, 5
-  set :rails_env, "development"
+  set :rails_env, "production"
   set :scm_passphrase, "advhwhpSoK9OaIAKKyJ1SjqXrEDDAmHRsEWjIDAnNxldljmezY"
   
   set :application, "boda.pabloformoso.com"
@@ -157,4 +157,4 @@ before "deploy:symlink" do
 end
 
 require 'bundler/capistrano'
-load 'deploy/assets'
+#load 'deploy/assets'
