@@ -2,21 +2,36 @@
 <html>
 <head>
   <title>Boda de Déborah y Pablo :: 1 de Diciembre 2012</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "users/application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-<% if current_user %>
-  <div class="row user_row">
-    <div class="two columns offset-by-ten">
-      <%= link_to "Cerrar Sessión".html_safe, destroy_user_session_path, :method => :delete %>
-    </div>
-  </div>
-<% end %>
+<div class="row">
+  <h1>Deborah y Pablo</h1>
+</div>
+<div class="row">
+  <ul class="nav-bar">
+    <li><%= link_to " Inicio ", home_path %></li>
+    <li><%= link_to "La Boda", weeding_path %></li>
+    <li><%= link_to "Lista de Regalos", "http://pabloydeborah.zankyou.com/es", target: :blank %>
+    <li><%= link_to "Confirmar Asistenacia", confirmation_path %></li>
+    <li><%= link_to "Entorno y Estancia", area_path %></li>
+    <li><%= link_to "Contacto", about_path %></li>
+    <li><%= link_to "Cerrar Sessión".html_safe, destroy_user_session_path, :method => :delete %></li>
+  </ul>
+</div>
+
 
 <%= yield %>
-
+<br /><br />
+<div class="row centered">
+  <div class="twelve colums centered">
+    <p class="footer">
+      Softwhisper Dev ®
+    </p>
+  </div>
+</div>
 </body>
 </html>

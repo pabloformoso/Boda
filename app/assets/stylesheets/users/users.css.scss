@@ -1,0 +1,50 @@
+@import "variables";
+
+h1,h2,h3 {
+  font-family: $helvetica-font;
+  font-weight: normal;
+  color: $white;
+}
+
+div.box { 
+  background: $white; 
+  opacity: 0.8;
+  padding-bottom: 10px;
+  p {
+    font-size: 1.4em;
+    letter-spacing: -0.1em;
+    color: $white;
+  }
+  p.info {
+    color: $black;
+    padding: 1em 0;
+  }
+  
+}
+
+ul.nav-bar {
+  background: transparent;
+  border: none;
+  li {
+    border: none;
+    font-weight: bold;
+  }
+  li:hover {
+   background: none; 
+   opacity: 0.8;
+  }
+}
+
+p.footer {
+  margin-top: 5px;
+  border-top: 1px solid $white;
+  padding-top: 10px;
+  text-align: center;
+  color: $white;
+}
+
+form {
+  label {
+    color: $black;
+  }
+}

@@ -1,0 +1,22 @@
+@import "variables";
+
+body { 
+	background: transparent url(/assets/bg2.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+label {
+  color: $white;
+}
+
+div.user_row {
+  padding: 5px 0;
+  background: $bg_trans_40;
+  
+  a {
+    color: $white;
+  }
+}

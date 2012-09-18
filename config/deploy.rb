@@ -148,13 +148,11 @@ end
 
 after "deploy:update" do
   run "ln -nfs #{shared_path}/db/database.yml #{current_path}/config/database.yml"
-  run "rm -rf  #{current_path}/public/ckeditor_assets"
-  run "ln -nfs #{shared_path}/ckeditor_assets #{current_path}/public/ckeditor_assets"
 end
 
-before "deploy:symlink" do
+before "deploy:assets:precompile" do
   run "ln -nfs #{shared_path}/db/database.yml #{latest_release}/config/database.yml"
 end
 
 require 'bundler/capistrano'
-#load 'deploy/assets'
+load 'deploy/assets'

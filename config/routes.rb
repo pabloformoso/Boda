@@ -10,10 +10,14 @@ Boda::Application.routes.draw do
   match "/lista_de_regalos" => "home#presents", as: :presents
   match "/mas_info" => "home#about", as: :about
   match "/yovoy" => "home#confirm", as: :confirmation
+  match "/entorno" => "home#area", as: :area
   
   get "landing/index"
   post "landing/create_access_request"
-
+  get "home/confirm_guest"
+  get "home/cancel_guest"
+  put "home/update_guest"
+  
   namespace :admin do 
     root to: "main#index"
     

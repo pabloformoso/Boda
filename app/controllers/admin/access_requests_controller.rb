@@ -89,8 +89,9 @@ class Admin::AccessRequestsController < Admin::BaseController
     @admin_access_request = Admin::AccessRequest.find(params[:id])
     @user = User.create!(:email => @admin_access_request.email, :password => "boda2012", :password_confirmation => "boda2012")
     if @user
-      @guest = Admin::Guest.create(:name => @admin_access_request.name, :user => @user, :has_confirmed => false)
+      @guest = Admin::Guest.create(:name => @admin_access_request.name, :user => @user, :has_confirmed => false, :main => true, :number_of_companions => 0)
       @admin_access_request.update_attribute(:revised, true)
+      AccessRequestMailer.accept_request(@admin_access_request).deliver
       redirect_to admin_root_path, notice: "Invitado creado"
     else
       redirect_to admin_root_path, notice: "Error al crear el invitado"
