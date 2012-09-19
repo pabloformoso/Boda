@@ -1,18 +1,37 @@
 <h1>Administración</h1>
-<div class="four columns">
-  <h4>Solicitudes Pendientes (<%= @access_requests.size %>) </h4>
-  <% if !@access_requests.blank? %>
-    <% for r in @access_requests %>
-      <div class="request_row">
-        <%= r.name %><br />
-        <%= r.email %><br />
-        <%= link_to "OK", approve_admin_access_request_path(r) %> | 
-        <%= link_to "RJ", reject_admin_access_request_path(r) %> | 
-        <%= link_to 'X', r, confirm: 'Seguro que desea eliminar la solicitud?', method: :delete %>
-      </div>
+<div class="row">
+  <div class="four columns">
+    <h4>Solicitudes Pendientes (<%= @access_requests.size %>) </h4>
+    <% if !@access_requests.blank? %>
+      <% for r in @access_requests %>
+        <div class="request_row">
+          <%= r.name %><br />
+          <%= r.email %><br />
+          <%= link_to "OK", approve_admin_access_request_path(r) %> | 
+          <%= link_to "RJ", reject_admin_access_request_path(r) %> | 
+          <%= link_to 'X', r, confirm: 'Seguro que desea eliminar la solicitud?', method: :delete %>
+        </div>
+      <% end %>
+    <% else %>
+      No has solicitudes pendientes.
     <% end %>
-  <% else %>
-    
-  <% end %>
-  
+  </div>
+  <div class="four columns">
+    <h4>Confirmados:</h4>
+    <% if !Admin::Guest.confirmed.blank? %>
+      <% for guest in Admin::Guest.confirmed %>
+      <div class="request_row">
+        <%= guest.name %><br />
+        Asistentes: <%= guest.number_of_companions %>
+      </div>
+      <% end %>
+    <% else %>
+      Invitados sin confirmar
+    <% end %>
+  </div>
+  <div class="four columns">
+    <h4>General</h4>
+    <b>Asistentes:</b> <%= Admin::Guest.all.count %><br />
+    <b>Confirmados:</b> <%= Admin::Guest.confirmed.count %><br />
+  </div>  
 </div>

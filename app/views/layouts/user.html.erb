@@ -8,8 +8,22 @@
 </head>
 
 <body>
+
+<% if flash[:notice] %>
+  <div id="myModal" class="reveal-modal small">
+    <h3><%= flash[:notice] %></h3>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  <script type="text/javascript">$('#myModal').reveal();</script>
+<% end %>
+
 <div class="row">
-  <h1>Deborah y Pablo</h1>
+  <div class="eight columns">
+    <h1>Deborah y Pablo</h1>  
+  </div>
+  <div class="four columns">
+    <h3>Quedan: <%= @days %> <%= @days == 1 ? "día" : "días" %></h3>
+  </div>
 </div>
 <div class="row">
   <ul class="nav-bar">
