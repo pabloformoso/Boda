@@ -15,6 +15,9 @@
     <% else %>
       No has solicitudes pendientes.
     <% end %>
+    <h4>General</h4>
+    <b>Asistentes:</b> <%= Admin::Guest.all.count %><br />
+    <b>Confirmados:</b> <%= Admin::Guest.confirmed.count %><br />
   </div>
   <div class="four columns">
     <h4>Confirmados:</h4>
@@ -26,12 +29,20 @@
       </div>
       <% end %>
     <% else %>
-      Invitados sin confirmar
+      Lista vacía
     <% end %>
   </div>
   <div class="four columns">
-    <h4>General</h4>
-    <b>Asistentes:</b> <%= Admin::Guest.all.count %><br />
-    <b>Confirmados:</b> <%= Admin::Guest.confirmed.count %><br />
+    <h4>No Confirmados:</h4>
+    <% if !Admin::Guest.not_confirmed.blank? %>
+      <% for guest in Admin::Guest.not_confirmed %>
+      <div class="request_row">
+        <%= guest.name %><br />
+        Asistentes: <%= guest.number_of_companions %>
+      </div>
+      <% end %>
+    <% else %>
+      Lista vacía
+    <% end %>
   </div>  
 </div>

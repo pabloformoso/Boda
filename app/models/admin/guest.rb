@@ -3,4 +3,5 @@ class Admin::Guest < ActiveRecord::Base
   attr_accessible :city, :has_confirmed, :lastname, :name, :number_of_companions, :user
   
   scope :confirmed, where(:has_confirmed => true)
+  scope :not_confirmed, where(:has_confirmed => false)
 end
