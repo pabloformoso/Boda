@@ -24,10 +24,10 @@ class HomeController < BaseController
 
     respond_to do |format|
       if @admin_guest.update_attribute(:has_confirmed, true)
-        format.html { redirect_to confirmation_path, notice: 'Gracias. Acabas de confirmar tu asistencia a la boda.' }
+        format.html { redirect_to confirmation_path, notice: 'Gracias. Acabas de confirmar tu asistencia a la boda. Recuerda indicar el número de acompañantes.' }
         format.json { head :no_content }
       else
-        format.html { redirect_to confirmation_path, notice: 'No hemos podido confirmar tu asistencia. Si persiste ponte en contacto con nosotros.' }
+        format.html { redirect_to confirmation_path, notice: 'No hemos podido confirmar tu asistencia. Si el problema persiste ponte en contacto con nosotros.' }
         format.json { render json: @admin_guest.errors, status: :unprocessable_entity }
       end
     end

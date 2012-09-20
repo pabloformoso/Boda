@@ -5,6 +5,9 @@ h1,h2,h3 {
   font-weight: normal;
   color: $white;
 }
+div#myModal h3 {
+  color:$black;
+}
 
 div.box { 
   background: $white; 
