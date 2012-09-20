@@ -23,17 +23,18 @@
   </div>
   <div class="four columns">
     <h3>Quedan: <%= @days %> <%= @days == 1 ? "día" : "días" %></h3>
+    <%= link_to "[X] Salir".html_safe, destroy_user_session_path, :method => :delete %>
   </div>
 </div>
 <div class="row">
   <ul class="nav-bar">
-    <li><%= link_to " Inicio ", home_path %></li>
+    <li><%= link_to "Inicio", home_path %></li>
     <li><%= link_to "La Boda", weeding_path %></li>
     <li><%= link_to "Lista de Regalos", "http://pabloydeborah.zankyou.com/es", target: :blank %>
     <li><%= link_to "Confirmar Asistenacia", confirmation_path %></li>
+    <li><%= link_to "Libro de Visitas", messages_path %></li>
     <li><%= link_to "Entorno y Estancia", area_path %></li>
     <li><%= link_to "Contacto", about_path %></li>
-    <li><%= link_to "Cerrar Sessión".html_safe, destroy_user_session_path, :method => :delete %></li>
   </ul>
 </div>
 

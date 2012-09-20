@@ -1,0 +1,25 @@
+<div class="row">
+  <h1>Libro de Visitas</h1>
+  <%= link_to 'Escribe tu mensaje para los novios :)', new_message_path, :class => "radius medium secondary button" %><br /><br />
+  <% if !@messages.blank? %>
+    <% count = 2 %>
+    <% for msg in @messages %>
+      <%= "<div class='row'>".html_safe if count%2 == 0 %>
+      <div class="five columns box">
+        <br />
+        <b><%= msg.guest.name %> :</b>
+        <p class="info">
+          <%= msg.content %>
+        </p>
+      </div>
+      <%= "</div><br />".html_safe if count%2 == 1 %>
+      <% count += 1 %>
+    <% end %>
+  <% else %>
+    <div class="eight columns box">
+      <p class="info">
+        No hay entradas en el libro.
+       </p>    
+    </div>
+  <% end %>
+</div>

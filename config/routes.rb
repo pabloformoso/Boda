@@ -1,5 +1,7 @@
 Boda::Application.routes.draw do
 
+  resources :messages
+
   root to: "landing#index"
 
   devise_for :users
