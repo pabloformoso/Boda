@@ -1,0 +1,7 @@
+<% if !@admin_guests.blank? %>
+  <% for g in @admin_guests %>
+    <%= g.user.email %>, <%= g.name.split %>, <%= g.lastname %>
+  <% end %>
+<% else %>
+  empty
+<% end %>

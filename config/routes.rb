@@ -30,7 +30,11 @@ Boda::Application.routes.draw do
       end
     end
     
-    resources :guests 
+    resources :guests do
+      collection do
+        get :list_csv
+      end
+    end
   end
   
 end

@@ -20,7 +20,14 @@ class Admin::GuestsController < Admin::BaseController
       format.json { render json: @admin_guest }
     end
   end
-
+  
+  def list_csv
+    @admin_guests = Admin::Guest.all
+    respond_to do |format|
+      format.csv
+    end
+  end
+  
   # GET /admin/guests/new
   # GET /admin/guests/new.json
   def new

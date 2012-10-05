@@ -17,6 +17,8 @@
   
 <div class="row">
   <%= yield %>
+  <br />
+  <%= link_to "Exportar MailChimp", list_csv_admin_guests_path(:format => "csv") %>
 </div>
   
 
