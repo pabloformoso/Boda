@@ -1,20 +1,35 @@
 <div class="row">
   <div class="six columns box">
     <p class="info">
-      Gracias por estar aquí :)<br />
-      En esta página podrás confirmar tu asistencia a la boda, agregar los datos de acompañante/s, conocer los horarios, toda la información del hotel etc... poco a poco iremos colgando algunas sorpresas, fotos de los preparativos. También podréis acceder a la lista de bodas en Zankyou, una forma fácil de escoger los regalos sin moverte de casa.
-      <br />
-      No dudéis en poneros en contacto con nosotros.
+      Gracias por estar aquí :) Estas son las cosas que podrás ver y hacer en la página:<br />
+    </p>
+    <ul>
+      <li><%= link_to "Confirmar tu asistencia", confirmation_path %></li>
+      <li><%= link_to "Conocer los detalles y horarios", weeding_path %></li>
+      <li><%= link_to "Donde hospedaros esa noche", area_path %></li>
+      <li><%= link_to "Escribir en el libro de visitas", messages_path %></li>
+      <li><%= link_to "Nuestras preferencias con los regalos", "http://pabloydeborah.zankyou.com/es", target: :blank %></li>
+    </ul>
+    <p class="info">
+      No dudéis en contactar con nosotros.
     </p>
   </div>
   
   <div class="six columns">
-    <div id="featured">
+    <div id="featured" class="orbit">
       <%= image_tag "img2.jpg" %>
       <%= image_tag "img3.jpg" %>
       <%= image_tag "img4.jpg" %>
       <%= image_tag "img5.jpg" %>
       <%= image_tag "img6.jpg" %>      
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns box">
+    <p class="info">
+      Dentro de poco iremos incluyendo mensajes y fotos de los preparativos, noticias y más cosas para que compartáis con nosotros este experiencia al máximo.
+    </p>    
   </div>
 </div>

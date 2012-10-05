@@ -16,7 +16,6 @@
   <div class="eight columns offset-by-one">
     <h1 class="landing">Déborah y Pablo</h1>
   </div>
-  
   <div class="three columns">
     <h4 class="landing">
       Oleiros, 1 de Diciembre del 2012
@@ -24,10 +23,15 @@
   </div>
 </div>
 
-<div class="row landing_form">
-  
-  <div class="three columns offset-by-three box">
-    <h4 class="landing">No tengo contraseña:</h4>
+<div class="row landing_info">
+  <div class="two columns offset-by-three box">
+    <h1 class="landing">1.</h1>
+    <p class="landing-step">
+      Rellenar este formulario con vuestro nombre y correo electrónico.<br /><br />
+    </p>
+  </div>
+  <div class="two columns box">
+    <br /><br />
     <%= form_for @access_request, url: landing_create_access_request_path do |f| %>
       <%= f.label :name, "Nombre completo:" %>
       <%= f.text_field :name %>
@@ -35,8 +39,22 @@
       <%= f.text_field :email %>
       <%= f.submit "Enviar", :disable_with => 'Enviando...', :class => "medium radius button right" %>
     <% end %>
+
   </div>
-  <div class="three columns box">
+  
+  <div class="two columns box">
+    <h1 class="landing">2.</h1>
+    <p>
+      En 24/48 horas os haremos llegar vuestra contraseña para entrar en la página.
+    </p>
+
+  </div>
+
+  <div class="three columns"> </div>
+</div>
+
+<div class="row landing_form box">
+  <div class="three columns offset-by-three">
     <h4 class="landing">Acceder a la web:</h4>
     <%= form_for(@user, :as => @user, :url => session_path(@user)) do |f| %>
       <%= f.label :email, "Correo electrónico" %>
@@ -46,32 +64,21 @@
       <%= f.submit "Entrar", :disable_with => 'Validando...', :class => "medium radius secondary button right" %>
     <% end %>
   </div>
+  
+  <div class="three columns">
+    <h1 class="landing">3.</h1>
+    <p>
+      Una vez dentro encontraréis toda la información sobre la boda, mapa, horarios, fotos, libro de visitas, alojamiento, lista de regalos, etc...
+    </p>
+  </div>
+
   <div class="three columns">
     
   </div>
 </div>
 
 <div class="row landing_info">
-  <div class="two columns offset-by-three box">
-    <h1 class="landing">1.</h1>
-    <p>
-      Rellenar el formulario de arriba con vuestro nombre e email de una de las personas invitadas.
-    </p>
+  <div class="six columns offset-by-three box">
+    <p class="list_info"> <%= link_to "Ver la Lista de Boda en Zankyou", "http://pabloydeborah.zankyou.com/es" %> </p> 
   </div>
-  <div class="two columns box">
-    <h1 class="landing">2.</h1>
-    <p>
-      En 24/48 horas os haremos llegar vuestra contraseña para entrar en la página.
-    </p>
-  </div>
-  
-  <div class="two columns box">
-    <h1 class="landing">3.</h1>
-    <p>
-      Una vez dentro encontraréis toda la información sobre la boda, mapa, horarios, fotos...
-    </p>
-  </div>
-  
-  <div class="three columns"> </div>
-
 </div>

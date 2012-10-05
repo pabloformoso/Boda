@@ -18,9 +18,20 @@ div.box {
     letter-spacing: -0.1em;
     color: $white;
   }
+  
   p.info {
     color: $black;
     padding: 1em 0;
+  }
+  
+  ul {
+    margin-top: -10px;
+    li {
+      a {
+        font-size: 1.2em;
+        color: $black2;
+      }
+    }
   }
   
 }

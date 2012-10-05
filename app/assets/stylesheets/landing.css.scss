@@ -7,7 +7,7 @@ div.landing {
 
 div.landing_info,
 div.landing_form {
-  margin-top: 100px;  
+  margin-top: 50px;  
 }
 
 
@@ -26,4 +26,14 @@ h1.landing {
   font-family: $helvetica-font;
   font-weight: normal;
   color: $white;
+}
+h4.access { color: $black;}
+
+p.list_info {
+  text-align: center;
+  margin-top: 25px;
+  a {
+    color: $black;
+  }
+  
 }
