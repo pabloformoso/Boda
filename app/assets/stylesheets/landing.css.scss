@@ -21,12 +21,14 @@ div.box {
   }
 }
 
+h3.landing,
 h4.landing,
 h1.landing {
   font-family: $helvetica-font;
   font-weight: normal;
   color: $white;
 }
+
 h4.access { color: $black;}
 
 p.list_info {
@@ -34,6 +36,11 @@ p.list_info {
   margin-top: 25px;
   a {
     color: $black;
+  } 
+}
+
+#access_form {
+  label, h1, h2, h3, h4 {
+    color: $black;
   }
-  
 }

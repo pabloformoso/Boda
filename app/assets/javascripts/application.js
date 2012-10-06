@@ -16,5 +16,10 @@
 //= require_tree .
 
 $(document).foundationNavigation();
-
 $(window).load(function() { $('#featured').orbit(); });
+
+$(document).ready(function() {
+  $('#access_link').click(function() {
+    $('#access_form').reveal();
+  });
+});

@@ -23,39 +23,9 @@
   </div>
 </div>
 
-<div class="row landing_info">
-  <div class="two columns offset-by-three box">
-    <h1 class="landing">1.</h1>
-    <p class="landing-step">
-      Rellenar este formulario con vuestro nombre y correo electrónico.<br /><br />
-    </p>
-  </div>
-  <div class="two columns box">
-    <br /><br />
-    <%= form_for @access_request, url: landing_create_access_request_path do |f| %>
-      <%= f.label :name, "Nombre completo:" %>
-      <%= f.text_field :name %>
-      <%= f.label :email, "Correo electrónico:" %>
-      <%= f.text_field :email %>
-      <%= f.submit "Enviar", :disable_with => 'Enviando...', :class => "medium radius button right" %>
-    <% end %>
-
-  </div>
-  
-  <div class="two columns box">
-    <h1 class="landing">2.</h1>
-    <p>
-      En 24/48 horas os haremos llegar vuestra contraseña para entrar en la página.
-    </p>
-
-  </div>
-
-  <div class="three columns"> </div>
-</div>
-
 <div class="row landing_form box">
   <div class="three columns offset-by-three">
-    <h4 class="landing">Acceder a la web:</h4>
+    <h3 class="landing">Acceder a la web:</h4>
     <%= form_for(@user, :as => @user, :url => session_path(@user)) do |f| %>
       <%= f.label :email, "Correo electrónico" %>
       <%= f.email_field :email %>
@@ -66,9 +36,9 @@
   </div>
   
   <div class="three columns">
-    <h1 class="landing">3.</h1>
+    <h3 class="landing">¿Sin contraseña?.</h1>
     <p>
-      Una vez dentro encontraréis toda la información sobre la boda, mapa, horarios, fotos, libro de visitas, alojamiento, lista de regalos, etc...
+      ¿Tienes tu invitación pero no contraseña?.<br /> <%= link_to "Pulsa aquí", "#", :id => "access_link" %>, rellena tus datos y te la enviaremos a tu email para que puedas entrar a la página :)
     </p>
   </div>
 
@@ -77,8 +47,32 @@
   </div>
 </div>
 
-<div class="row landing_info">
-  <div class="six columns offset-by-three box">
+<div class="row landing_info box">
+  <div class="six columns offset-by-three">
     <p class="list_info"> <%= link_to "Ver la Lista de Boda en Zankyou", "http://pabloydeborah.zankyou.com/es" %> </p> 
   </div>
+</div>
+
+<div id="access_form" class="reveal-modal medium">
+  <div class="row">
+    <div class="six columns">
+      <h4 class="landing">1. Solicitar a la web:</h4>
+     <%= form_for @access_request, url: landing_create_access_request_path do |f| %>
+       <%= f.label :name, "Nombre completo:" %>
+       <%= f.text_field :name %>
+       <%= f.label :email, "Correo electrónico:" %>
+       <%= f.text_field :email %>
+       <%= f.submit "Enviar", :disable_with => 'Enviando...', :class => "medium radius button right" %>
+     <% end %>
+    </div>
+    <div class="six columns">
+      <h4 class="landing">2. Acceso a la página:</h4>
+      <p>
+        En 24/48 horas os haremos llegar vuestra contraseña para entrar en la página. 
+        La intimidad en este día es algo que solo queremos compartir con vosotros e intentaremos que sea un día, que estoy seguro, no vamos a olvidar.
+      </p>
+    </div>
+  </div>
+  
+  <a class="close-reveal-modal">&#215;</a>
 </div>
