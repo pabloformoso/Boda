@@ -20,6 +20,10 @@ $(window).load(function() { $('#featured').orbit(); });
 
 $(document).ready(function() {
   $('#access_link').click(function() {
-    $('#access_form').reveal();
+    $('#access_form').reveal({
+      animation: 'fadeAndPop', 
+      animationSpeed: 500, 
+      closeOnBackgroundClick: true 
+    });
   });
 });
