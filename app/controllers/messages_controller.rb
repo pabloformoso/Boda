@@ -41,7 +41,6 @@ class MessagesController < BaseController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
-    @message.guest_id = current_user.guests.first.id
     
     respond_to do |format|
       if @message.save

@@ -15,7 +15,7 @@ class LandingController < ApplicationController
         
         AccessRequestMailer.request_received(@admin_access_request).deliver
         
-        format.html { redirect_to root_path, notice: 'Solicitud recibida correctamente.' }
+        format.html { redirect_to root_path, notice: 'Gracias por confirmar tu asistencia :)' }
         format.json { render json: @admin_access_request, status: :created, location: @admin_access_request }
       else
         format.html { render action: "index" }

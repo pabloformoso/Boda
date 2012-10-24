@@ -17,21 +17,18 @@
   <script type="text/javascript">$('#myModal').reveal();</script>
 <% end %>
 
-<% if current_user.guests.first.has_confirmed? %>
 <div class="row">
-  <div class="alert-box alert">
-    Aun no has confirmado la asistencia. <%= link_to "Puedes hacerlo aquí.", confirmation_path %>. Es importante para nosotros tener esta información lo antes posible.
+  <div class="alert-box success">
+    Si aun no has confirmado la asistencia <%= link_to "puedes hacerlo aquí.", confirmation_path %>. Es importante para nosotros tener esta información lo antes posible.
     <a href="" class="close">&times;</a>
   </div>
 </div>
-<% end %>
 
 <div class="row">
   <div class="eight columns">
-    <h1>Deborah y Pablo</h1>  
+    <h1>Boda de Deborah y Pablo</h1>  
   </div>
   <div class="four columns">
-    <%= link_to "[X] Salir".html_safe, destroy_user_session_path, :method => :delete %>
     <h3>Quedan: <%= @days %> <%= @days == 1 ? "día" : "días" %></h3>
   </div>
 </div>

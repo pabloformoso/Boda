@@ -2,7 +2,7 @@ Boda::Application.routes.draw do
 
   resources :messages
 
-  root to: "landing#index"
+  root to: "home#index"
 
   devise_for :users
   devise_for :administrators

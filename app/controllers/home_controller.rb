@@ -1,10 +1,11 @@
 #encoding: UTF-8
 class HomeController < BaseController
+  
   def index
   end
 
   def confirm
-    @guest = Admin::Guest.find_by_user_id(current_user.id)
+    @access_request = @access_request = Admin::AccessRequest.new
   end
 
   def weeding

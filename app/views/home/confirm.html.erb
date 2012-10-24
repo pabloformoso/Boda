@@ -1,53 +1,33 @@
 <div class="row">
-  <h3>Hola, <%= @guest.name %></h3>
-  <div class="six columns box">
-    <% if !@guest.has_confirmed %>
+  <div class="five columns box">
     <p class="info">
-      Aun no has confirmado tu asistencia. Pulsa él siguiente botón para confirmar la asistencia. 
-      <br />
-      <%= link_to "Confirmar Asistencia", home_confirm_guest_path(id: @guest.id), :class => "medium radius success button" %>
-      <br />
-      De cara a la organización del evento es importante que confirmes tu asistencia lo antes posible.
-    </p>
-    <% else %>
-      <p class="info">
-        Gracias. Ya has confirmado la asistencia.
-        <br />
-        Sin por algún motivo ya no vas a poder asistir, muy a nuestros pesar, puedes usar el siguiente botón para anular tu asistencia.<br />
-        <%= link_to "Cancelar Asistencia", home_cancel_guest_path(id: @guest.id), :class => "medium radius alert button" %>
-      </p>
-    <% end %>  
-  </div>
-
-  <div class="five columns offset-by-one box">
-    <p class="info">
-      Completa o modifica tus datos:
-      <%= form_for @guest, :url => home_update_guest_path(id: @guest.id) do |f| %>
-        <% if @guest.errors.any? %>
+      Confirma tu asistencia introduciendo tu datos:
+      <%= form_for @access_request, url: landing_create_access_request_path do |f| %>
+        <% if @access_request.errors.any? %>
           <div id="error_explanation">
-            <h2><%= pluralize(@admin_guest.errors.count, "error") %> prohibited this admin_guest from being saved:</h2>
+            <h2><%= pluralize(@access_request.errors.count, "error") %> prohibited this admin_guest from being saved:</h2>
             <ul>
-            <% @admin_guest.errors.full_messages.each do |msg| %>
+            <% @@access_request.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
             </ul>
           </div>
         <% end %>
 
-          <%= f.label :name, "Nombre" %>
+          <%= f.label :name, "Nombre completo:" %>
           <%= f.text_field :name %>
+          <%= f.label :email, "Correo electrónico:" %><small>* lo usaremos para contactar contigo</small>
+          <%= f.text_field :email %>
+          <%= f.submit "Enviar", :disable_with => 'Enviando...', :class => "medium radius button right" %>
 
-
-          <%= f.label :city, "Ciudad" %>
-          <%= f.text_field :city %>
-
-          <%= f.label :number_of_companions, "Número de acompañantes" %>
-          <%= f.number_field :number_of_companions %>
-
-        <div class="actions">
-          <%= f.submit "Actualizar", :disable_with => 'Actualizando...', :class => "medium radius button right" %>
-        </div>
       <% end %>
+    </p>
+  </div>
+  
+  <div class="six columns box  offset-by-one">
+    <p class="info">
+      Poniendo tu nombre y email nos ayudas a planificar todo con más anticipación. 
+      También nos podremos poner en contacto contigo a través del correo para informarte de detalles o noticias que tengamos de interés para el evento.
     </p>
   </div>
 

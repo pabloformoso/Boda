@@ -6,8 +6,6 @@
     <% for msg in @messages %>
       <%= "<div class='row'>".html_safe if count%2 == 0 %>
       <div class="five columns box">
-        <br />
-        <b><%= msg.guest.name %> :</b>
         <p class="info">
           <%= msg.content %>
         </p>

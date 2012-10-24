@@ -1,6 +1,6 @@
 class BaseController < ApplicationController
   layout "user"
-  before_filter :authenticate_user!, :days
+  before_filter :days
   
   def days
     a = Time.gm(2012,12,01)
