@@ -22,7 +22,7 @@ class Admin::GuestsController < Admin::BaseController
   end
   
   def list_csv
-    @admin_guests = Admin::Guest.all
+    @admin_guests = Admin::AccessRequest.all
     respond_to do |format|
       format.csv
     end
